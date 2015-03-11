@@ -1,0 +1,41 @@
+{
+    "name": "DataParserPipeline",
+    "properties": {
+        "description": "Download data from HTTP endpoint",
+        "activities": [
+            {
+                "type": "DotNetActivity",
+                "transformation": {
+                    "assemblyName": "DataDownloaderActivity.dll",
+                    "entryPoint": "DataDownloaderActivityNS.DataDownloaderActivity",
+                    "packageLinkedService": "HadoopStorageLinkedService",
+                    "packageFile": "hortonworks-demo-amazonsalesestimator/DataDownloaderActivity.zip",
+                    "extendedProperties": {
+                        "url": "http://snap.stanford.edu/data/bigdata/amazon/amazon-meta.txt.gz",
+                        "fileName": "amazon-meta"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "RawDataset"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "CookedDataset"
+                    }
+                ],
+                "policy": {
+                    "timeout": "00:30:00",
+                    "concurrency": 1
+                },
+                "name": "AmazonMetadata-DownloaderActivity",
+                "description": "Data Parser Pipeline",
+                "linkedServiceName": "HDInsightHadoopLinkedService"
+            }
+        ],
+        "start": "2016-02-01T00:00:00Z",
+        "end": "9999-09-09T00:00:00Z",
+        "isPaused": false
+    }
+}

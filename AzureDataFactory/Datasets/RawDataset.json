@@ -1,0 +1,16 @@
+{
+    "name": "RawDataset",
+    "properties": {
+        "published": false,
+        "location": {
+            "type": "AzureBlobLocation",
+            "folderPath": "dataset2/amazonSalesPredictor/raw",
+            "linkedServiceName": "MilanzStorageLinkedService"
+        },
+        "availability": {
+            "frequency": "Month",
+            "interval": 1,
+            "waitOnExternal": null
+        }
+    }
+}

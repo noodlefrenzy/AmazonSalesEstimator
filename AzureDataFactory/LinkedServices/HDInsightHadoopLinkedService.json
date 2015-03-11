@@ -1,0 +1,11 @@
+{
+    "name": "HDInsightHadoopLinkedService",
+    "properties": {
+        "clusterUri": "https://japoon-azuredatafactory.azurehdinsight.net/",
+        "userName": "<USERNAME>",
+        "password": "<PASSWORD>",
+        "location": null,
+        "linkedServiceName": "HadoopStorageLinkedService",
+        "type": "HDInsightBYOCLinkedService"
+    }
+}

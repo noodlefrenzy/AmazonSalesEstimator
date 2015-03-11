@@ -1,0 +1,7 @@
+{
+    "name": "MilanzStorageLinkedService",
+    "properties": {
+        "connectionString": "DefaultEndpointsProtocol=https;AccountName=milanztest;AccountKey=<ACCOUNT_KEY>",
+        "type": "AzureStorageLinkedService"
+    }
+}
